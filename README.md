@@ -1,5 +1,7 @@
 # schemata-kt
 
+[![Test](https://github.com/nostrability/schemata-kt/actions/workflows/test.yml/badge.svg)](https://github.com/nostrability/schemata-kt/actions/workflows/test.yml)
+
 Kotlin/JVM data package containing compiled [Nostr](https://nostr.com/) protocol JSON schemas from [nostrability/schemata](https://github.com/nostrability/schemata).
 
 This is the Kotlin equivalent of [`schemata-rs`](https://github.com/nostrability/schemata-rs) — a vendored collection of 190 compiled JSON Schema (Draft-07) definitions covering Nostr event kinds, tags, protocol messages, and NIP-11.
