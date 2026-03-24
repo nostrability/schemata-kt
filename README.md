@@ -1,6 +1,7 @@
 # schemata-kt
 
 [![Test](https://github.com/nostrability/schemata-kt/actions/workflows/test.yml/badge.svg)](https://github.com/nostrability/schemata-kt/actions/workflows/test.yml)
+[![](https://jitpack.io/v/nostrability/schemata-kt.svg)](https://jitpack.io/#nostrability/schemata-kt)
 
 Kotlin/JVM data package containing compiled [Nostr](https://nostr.com/) protocol JSON schemas from [nostrability/schemata](https://github.com/nostrability/schemata).
 
@@ -15,24 +16,31 @@ This is the Kotlin equivalent of [`schemata-rs`](https://github.com/nostrability
 | [schemata-validator-kt](https://github.com/nostrability/schemata-validator-kt) | Kotlin | Validator (this package + networknt) |
 | [schemata-validator-rs](https://github.com/nostrability/schemata-validator-rs) | Rust | Validator (schemas + jsonschema) |
 
-## Usage
+## Installation
 
-Add as a dependency (for use with `schemata-validator-kt`) or directly:
+### JitPack (recommended)
 
 ```kotlin
-// settings.gradle.kts
-sourceControl {
-    gitRepository(uri("https://github.com/nostrability/schemata-kt.git")) {
-        producesModule("nostrability:schemata-kt")
-    }
+// settings.gradle.kts or build.gradle.kts
+repositories {
+    maven("https://jitpack.io")
+}
+
+dependencies {
+    implementation("com.github.nostrability:schemata-kt:v0.1.1")
 }
 ```
 
-Or via JitPack / local composite build:
+### Local composite build (for development)
 
 ```kotlin
 // settings.gradle.kts
 includeBuild("../schemata-kt")
+
+// build.gradle.kts
+dependencies {
+    implementation("nostrability:schemata-kt")
+}
 ```
 
 ### Look up schemas
