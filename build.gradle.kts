@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "1.9.24"
     kotlin("plugin.serialization") version "1.9.24"
+    `maven-publish`
 }
 
 group = "nostrability"
@@ -53,4 +54,12 @@ val vendorSchemas = tasks.register<Copy>("vendorSchemas") {
 // Ensure schemas are vendored before processing resources
 tasks.named("processResources") {
     dependsOn(vendorSchemas)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
+    }
 }
